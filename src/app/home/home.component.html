@@ -1,0 +1,22 @@
+<h1>{{ title }}</h1>
+
+
+<button (click)="handleClick()" [disabled]="clicked">
+    Klick mich
+</button>
+
+<div *ngIf="clicked">
+    <div *ngFor="let company of companies">
+        <h2 [ngClass]="{'red': company.name === 'Google', 'blue': company.name === 'sixData'}">
+            {{ company.name }}
+        </h2>
+        
+        <img [src]="company.logoSrc" width="200px">
+        
+        <p>
+            Gegründet im Jahr {{ company.foundingYear }}
+        </p>
+        
+        <hr/>
+    </div>
+</div>
